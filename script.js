@@ -47,5 +47,5 @@ window.addEventListener('load', () => {
   if (localStorage.getItem('data')) {
     Books = JSON.parse(localStorage.getItem('data'));
   }
-  console.log(Books);
+  displayBooks();
 });

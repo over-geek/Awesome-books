@@ -4,7 +4,7 @@ const addBtn = document.getElementById('add-btn');
 const libraryCollection = document.getElementById('library');
 const bookForm = document.getElementById('addBook-form');
 
-const Booklist = []; // array to store books
+let Booklist = []; // array to store books
 
 function saveData() {
   localStorage.setItem('data', JSON.stringify(Booklist));
@@ -22,12 +22,12 @@ class Book {
     let bookCard = '';
     for (let i = 0; i < Booklist.length; i += 1) {
       bookCard = `
-        <div>
+        <div class="added-books-container">
           <div>
             <p>"${this.title}" by ${this.author}</p>
           </div>
           <div>
-            <button type="button" id="add-btn">Remove</button>
+            <button type="button" class="remove-btn">Remove</button>
           </div>
         </div>
       `;
@@ -53,8 +53,8 @@ addBtn.addEventListener('click', addNewBook);
 function removeBook(e) {
   if (e.target.className === 'remove-btn') {
     const btnId = Number(e.target.id);
-    Books = Books.filter((book, index) => index !== btnId);
-    e.target.parentNode.remove();
+    Booklist = Booklist.filter((book, index) => index !== btnId);
+    e.target.parentNode.parentNode.remove();
     saveData();
   }
 }
@@ -63,9 +63,9 @@ document.addEventListener('click', removeBook);
 
 window.addEventListener('load', () => {
   if (localStorage.getItem('data')) {
-    Books = JSON.parse(localStorage.getItem('data'));
+    Booklist = JSON.parse(localStorage.getItem('data'));
   }
-  if (Books.length !== 0) {
-    displayBooks();
+  if (Booklist.length !== 0) {
+    Book.displayBooks();
   }
 });

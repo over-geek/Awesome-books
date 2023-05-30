@@ -3,6 +3,7 @@ const author = document.getElementById('book-author');
 const addBtn = document.getElementById('add-btn');
 const libraryCollection = document.getElementById('library');
 const bookForm = document.getElementById('addBook-form');
+const dash = document.getElementById('dash');
 
 let Booklist = []; // array to store books
 
@@ -45,6 +46,9 @@ function addNewBook() {
     book.displayBooks();
     saveData();
     bookForm.reset();
+    if(Booklist.length > 0) {
+      dash.style.display = 'block';
+    }
   }
 }
 
@@ -54,6 +58,9 @@ function removeBook(e) {
   if (e.target.className === 'remove-btn') {
     const btnId = Number(e.target.id);
     Booklist = Booklist.filter((book, index) => index !== btnId);
+    if (Booklist.length === 0) {
+      dash.style.display = 'none';
+    }
     e.target.parentNode.parentNode.remove();
     saveData();
   }
@@ -66,6 +73,17 @@ window.addEventListener('load', () => {
     Booklist = JSON.parse(localStorage.getItem('data'));
   }
   if (Booklist.length !== 0) {
-    Book.displayBooks();
+    Booklist.forEach((book) => {
+      libraryCollection.innerHTML += `
+        <div class="added-books-container">
+          <div>
+            <p>"${book.title}" by ${book.author}</p>
+          </div>
+          <div>
+            <button type="button" class="remove-btn">Remove</button>
+          </div>
+        </div>
+      `
+    })
   }
 });

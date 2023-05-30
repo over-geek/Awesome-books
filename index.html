@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Awesome Books</h1>
-    <section id="book-list">
-        <div id="library"></div>
-    </section>
-    <section id="new-book">
-        <div class="form">
-            <form action="">
-                <input type="text" id="book-title" placeholder="title"><br>
-                <input type="text" id="book-author" placeholder="author"><br>
-                <button id="add-btn" type="button">Add</button>
-            </form>
-        </div>
-    </section>
+    <div class="container">
+        <h1>Awesome Books</h1>
+        <section id="book-list">
+            <div id="library"></div>
+        </section>
+        <hr id="dash">
+        <section id="new-book">
+            <div>
+                <form action="" id="addBook-form">
+                    <input type="text" id="book-title" placeholder="title"><br>
+                    <input type="text" id="book-author" placeholder="author"><br>
+                    <button id="add-btn" type="button">Add</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,27 @@
 input {
   margin-bottom: 5px;
 }
+
+.container {
+  margin: 0 auto;
+  width: 400px;
+  text-align: center;
+}
+
+.added-books-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+#addBook-form {
+  margin-top: 10px;
+}
+
+#dash {
+  width: 100px;
+  border: 1px solid black;
+  display: none;
+}

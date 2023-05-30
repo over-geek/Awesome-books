@@ -19,3 +19,9 @@ input {
 #addBook-form {
   margin-top: 10px;
 }
+
+#dash {
+  width: 100px;
+  border: 1px solid black;
+  display: none;
+}

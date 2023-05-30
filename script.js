@@ -38,13 +38,15 @@ function addNewBook() {
 
 addBtn.addEventListener('click', addNewBook);
 
-document.addEventListener('click', (e) => {
+function removeBook(e) {
   if (e.target.className === 'remove-btn') {
-    Books.splice(e.target.id, 1);
+    Books = Books.filter((book, index) => index !== e.target.id);
     e.target.parentNode.remove();
     saveData();
   }
-});
+}
+
+document.addEventListener('click', removeBook);
 
 window.addEventListener('load', () => {
   if (localStorage.getItem('data')) {

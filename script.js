@@ -18,6 +18,7 @@ function displayBooks() {
         <div>${Books[i].title}</div>
         <div>${Books[i].author}</div>
         <button id=${i} type='button' class="remove-btn">Remove</button>
+        <hr>
       </div>
     `;
   }
@@ -26,11 +27,13 @@ function displayBooks() {
 
 // function to add new book to books array
 function addNewBook() {
-  Books.push({ title: title.value, author: author.value });
-  displayBooks();
-  saveData();
-  title.value = '';
-  author.value = '';
+  if (title.value !== '' && author.value !== '') {
+    Books.push({ title: title.value, author: author.value });
+    displayBooks();
+    saveData();
+    title.value = '';
+    author.value = '';
+  }
 }
 
 addBtn.addEventListener('click', addNewBook);
@@ -47,5 +50,7 @@ window.addEventListener('load', () => {
   if (localStorage.getItem('data')) {
     Books = JSON.parse(localStorage.getItem('data'));
   }
-  displayBooks();
+  if (Books.length !== 0) {
+    displayBooks();
+  }
 });

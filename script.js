@@ -50,22 +50,22 @@ function addNewBook() {
 
 addBtn.addEventListener('click', addNewBook);
 
-// function removeBook(e) {
-//   if (e.target.className === 'remove-btn') {
-//     const btnId = Number(e.target.id);
-//     Books = Books.filter((book, index) => index !== btnId);
-//     e.target.parentNode.remove();
-//     saveData();
-//   }
-// }
+function removeBook(e) {
+  if (e.target.className === 'remove-btn') {
+    const btnId = Number(e.target.id);
+    Books = Books.filter((book, index) => index !== btnId);
+    e.target.parentNode.remove();
+    saveData();
+  }
+}
 
-// document.addEventListener('click', removeBook);
+document.addEventListener('click', removeBook);
 
-// window.addEventListener('load', () => {
-//   if (localStorage.getItem('data')) {
-//     Books = JSON.parse(localStorage.getItem('data'));
-//   }
-//   if (Books.length !== 0) {
-//     displayBooks();
-//   }
-// });
+window.addEventListener('load', () => {
+  if (localStorage.getItem('data')) {
+    Books = JSON.parse(localStorage.getItem('data'));
+  }
+  if (Books.length !== 0) {
+    displayBooks();
+  }
+});

@@ -46,7 +46,7 @@ function addNewBook() {
     book.displayBooks();
     saveData();
     bookForm.reset();
-    if(Booklist.length > 0) {
+    if (Booklist.length > 0) {
       dash.style.display = 'block';
     }
   }
@@ -83,7 +83,7 @@ window.addEventListener('load', () => {
             <button type="button" class="remove-btn">Remove</button>
           </div>
         </div>
-      `
-    })
+      `;
+    });
   }
 });

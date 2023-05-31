@@ -58,3 +58,10 @@ header {
   text-decoration: none;
   color: black;
 }
+
+footer {
+  margin-top: 10px;
+  border: 1px solid black;
+  text-align: left !important;
+  padding: 8px;
+}

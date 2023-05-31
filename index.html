@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,16 @@
     <title>Awesome Books</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <header>
             <p>Awesome Books</p>
             <nav>
                 <ul class="nav-links">
-                    <li class="border-right"><a href="#book-list">List</a></li>
-                    <li class="border-right"><a href="#new-book">Add new</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li class="border-right list-link"><a href="#book-list">List</a></li>
+                    <li class="border-right new-link"><a href="#new-book">Add new</a></li>
+                    <li class="contact-link"><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -24,7 +26,8 @@
             <div id="library"></div>
         </section>
         <hr id="dash">
-        <section id="new-book">
+        <section id="new-book" class="display-none">
+            <h3>Add new Books</h3>
             <div>
                 <form action="" id="addBook-form">
                     <input type="text" id="book-title" placeholder="title"><br>
@@ -33,9 +36,18 @@
                 </form>
             </div>
         </section>
+        <section id="Contact-section" class="display-none">
+            <h3>Contact information</h3>
+            <p class="contact-text">Do you have any question or you want to say "Hello" you can reach out to us!</p>
+            <ul class="contact-list">
+                <li>Our email</li>
+                <li>our phone number</li>
+                <li>our address</li>
+            </ul>
+        </section>
         <footer>Copyright</footer>
     </div>
-    
     <script src="script.js"></script>
 </body>
+
 </html>

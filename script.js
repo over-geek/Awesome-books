@@ -4,6 +4,13 @@ const addBtn = document.getElementById('add-btn');
 const libraryCollection = document.getElementById('library');
 const bookForm = document.getElementById('addBook-form');
 const dash = document.getElementById('dash');
+const sectionBookList = document.getElementById('book-list');
+const sectionNewBook = document.getElementById('new-book');
+const contactSection = document.getElementById('Contact-section');
+const listLink = document.querySelector('.list-link');
+const newLink = document.querySelector('.new-link');
+const contactLink = document.querySelector('.contact-link');
+
 
 let Booklist = []; // array to store books
 
@@ -86,4 +93,20 @@ window.addEventListener('load', () => {
       `;
     });
   }
+});
+
+listLink.addEventListener('click', () => {
+  sectionBookList.classList.remove('display-none');
+  sectionNewBook.classList.add('display-none');
+  contactSection.classList.add('display-none');
+});
+newLink.addEventListener('click', () => {
+  sectionNewBook.classList.remove('display-none');
+  sectionBookList.classList.add('display-none');
+  contactSection.classList.add('display-none');
+});
+contactLink.addEventListener('click', () => {
+  contactSection.classList.remove('display-none');
+  sectionBookList.classList.add('display-none');
+  sectionNewBook.classList.add('display-none');
 });

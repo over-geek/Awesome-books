@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 input {
   margin-bottom: 5px;
 }
@@ -24,4 +30,31 @@ input {
   width: 100px;
   border: 1px solid black;
   display: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 8px;
+  margin-bottom: 10px
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links li {
+  padding: 0 5px;
+}
+
+.border-right {
+  border-right: 1px solid black;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
 }

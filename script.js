@@ -11,7 +11,6 @@ const listLink = document.querySelector('.list-link');
 const newLink = document.querySelector('.new-link');
 const contactLink = document.querySelector('.contact-link');
 
-
 let Booklist = []; // array to store books
 
 function saveData() {
@@ -110,3 +109,15 @@ contactLink.addEventListener('click', () => {
   sectionBookList.classList.add('display-none');
   sectionNewBook.classList.add('display-none');
 });
+
+// date
+const date = new Date();
+const options = {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+};
+
+document.getElementById('date').innerHTML = date.toLocaleDateString('en-US', options);

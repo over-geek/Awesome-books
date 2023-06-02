@@ -1,11 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 input {
   margin-bottom: 5px;
 }
 
 .container {
-  margin: 0 auto;
-  width: 400px;
+  padding: 20px 30px;
+}
+
+#book-list {
   text-align: center;
+}
+
+#book-list > div {
+  border: 1px solid black;
+  margin-top: 20px;
 }
 
 .added-books-container {
@@ -24,4 +37,83 @@ input {
   width: 100px;
   border: 1px solid black;
   display: none;
+  margin: 8px auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  padding: 8px;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links li {
+  padding: 0 5px;
+}
+
+.border-right {
+  border-right: 1px solid black;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+}
+
+footer {
+  margin-top: 30px;
+  border: 2px solid black;
+  text-align: left !important;
+  padding: 8px;
+}
+
+.display-none {
+  display: none;
+}
+
+#Contact-section > div,
+#new-book > div {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#Contact-section h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-list {
+  margin: 30px 0 0 40px;
+}
+
+.form-container {
+  margin-top: 30px;
+}
+
+#new-book > div {
+  text-align: center;
+}
+
+#new-book input {
+  width: 70%;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: end;
+  width: 70%;
+  margin: 0 auto;
+}
+
+#date {
+  text-align: right;
+  margin-bottom: 10px;
 }
